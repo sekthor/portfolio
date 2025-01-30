@@ -2,6 +2,7 @@
 title = 'Polymorphic Profiles with Gorm'
 date = 2025-01-18T00:17:51+01:00
 draft = true
+tags = ["golang", "gorm", "postgres"]
 +++
 
 I have recently started a project written in go where I want users to be able to create profile pages.
@@ -29,7 +30,7 @@ type Profile struct {
     repo.Model // custom implementation of gorm.Model, but with custom ID format (cuid2)
     ProfileType string // the gorm polymorphic type (name of the child entity table)
     Name string // every Profile has a name (band name, venue name, ...)
-    ...
+    // ...
 }
 ```
 
@@ -56,6 +57,32 @@ This seemed most intuitive for a 1:1 relationship.
 - I can create an Artist or any other child entity, and directly create a corresponding profile
 - I can list all profiles, regardless of what entity they are associated with
 - I can easily delete Profiles with a single `DELETE /v1/profile/{id}` endpoint
+
+## Primary Keys
+
+I am using `cuid2` throughout the entire app as primary keys for entities.
+The same is true for profiles. To generate primary key for newly created entities I have written custom model with a `beforeCreate` function.
+This is a gorm convention.
+The method is called, as the name implies, before gorm creates the resource.
+
+```go
+type Model struct {
+	ID        string `gorm:"primaryKey"`
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	DeletedAt gorm.DeletedAt `gorm:"index"`
+}
+
+func (m *Model) BeforeCreate(tx *gorm.DB) (err error) {
+	if !cuid2.IsCuid(m.ID) {
+		m.ID = cuid2.Generate()
+	}
+	return nil
+}
+```
+
+Rather than using a synthetic id and a foreign key, I opted to make the child types Id also the foreign key.
+This is possible, because the relationship is 1:1.
 
 ## A note on deletion
 
