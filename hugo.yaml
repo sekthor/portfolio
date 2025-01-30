@@ -1,0 +1,13 @@
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+title: 'sekthor'
+
+theme: minimal
+
+taxonomies:
+  tag: tags
+
+markup:
+  highlight:
+    style: github
+    lineNos: true

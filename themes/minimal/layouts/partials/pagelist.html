@@ -1,0 +1,8 @@
+
+
+{{- $pages := .pages }}
+<ul>
+{{ range $pages }}
+    <li>{{ time.Format "2 Jan 2006" .Date }} - <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ with .Params.tags }}({{ delimit . ", " }}){{ end }}</li>
+{{ end }}
+</ul>
