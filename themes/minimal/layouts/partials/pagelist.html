@@ -1,8 +1,17 @@
 
 
 {{- $pages := .pages }}
-<ul>
+<table>
 {{ range $pages }}
-    <li>{{ time.Format "2 Jan 2006" .Date }} - <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ with .Params.tags }}({{ delimit . ", " }}){{ end }}</li>
+    <tr>
+        <td>{{ time.Format "2 Jan 2006" .Date }}</td>
+        <td>-</td>
+        <td><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></td>
+        <td>
+        {{ with .GetTerms "tags" }}
+            ({{ range $k, $v :=  . }}{{- if $k }}, {{ end }}<a href="{{ .RelPermalink }}">{{ .LinkTitle}}</a>{{ end }})
+        {{ end }}
+        </td>
+    </tr>
 {{ end }}
-</ul>
+    </table>
