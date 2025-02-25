@@ -1,7 +1,5 @@
-
-
 {{- $pages := .pages }}
-<table>
+<table class="pagelist">
 {{ range $pages }}
     <tr>
         <td>{{ time.Format "2 Jan 2006" .Date }}</td>
@@ -14,4 +12,4 @@
         </td>
     </tr>
 {{ end }}
-    </table>
+</table>

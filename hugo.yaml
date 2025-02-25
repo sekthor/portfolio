@@ -4,6 +4,18 @@ title: 'sekthor'
 
 theme: minimal
 
+menus:
+  main:
+    - name: Articles
+      pageRef: '/articles'
+      weight: 10
+    - name: Tags
+      pageRef: '/tags'
+      weight: 20
+    - name: About 
+      pageRef: '/about'
+      weight: 30
+
 taxonomies:
   tag: tags
 
