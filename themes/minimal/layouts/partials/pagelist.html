@@ -1,15 +1,14 @@
 {{- $pages := .pages }}
-<table class="pagelist">
-{{ range $pages }}
-    <tr>
-        <td>{{ time.Format "2 Jan 2006" .Date }}</td>
-        <td>-</td>
-        <td><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></td>
-        <td>
-        {{ with .GetTerms "tags" }}
-            ({{ range $k, $v :=  . }}{{- if $k }}, {{ end }}<a href="{{ .RelPermalink }}">{{ .LinkTitle}}</a>{{ end }})
-        {{ end }}
-        </td>
-    </tr>
-{{ end }}
-</table>
+<div>
+    {{ range $pages }}
+    <div class="pagelistitem">
+        <span class="date">{{ time.Format "2 Jan 2006" .Date }} -</span>
+        <a class="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <span class="tags">
+            {{ with .GetTerms "tags" }}
+                ({{ range $k, $v :=  . }}{{- if $k }}, {{ end }}<a href="{{ .RelPermalink }}">{{ .LinkTitle}}</a>{{ end }})
+            {{ end }}
+        </span>
+    </div>
+    {{ end }}
+</div>
