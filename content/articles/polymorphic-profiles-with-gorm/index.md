@@ -1,7 +1,6 @@
 +++
 title = 'Polymorphic Profiles with Gorm'
 date = 2025-01-18T00:17:51+01:00
-draft = true
 tags = ["golang", "gorm", "postgres"]
 +++
 
