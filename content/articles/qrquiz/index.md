@@ -2,17 +2,16 @@
 title = 'QrQuiz: A silly App'
 date = 2025-03-19T14:35:25+01:00
 tags = ['golang', 'qr code', 'quiz', 'sqlite', 'gin']
-draft = true
 +++
 
 Recently I had a stupid idea for an event: send out invitations with a QR Code to color in yourself.
-Invitees would recieve an empty square grid and a number of coordinates.
+Invitees would receive an empty square grid and a number of coordinates.
 Only when they color in the QR code correctly, will they able to scan the invitation and sign up for the event.
 Puzzlers would love this.
 Everyone else would hate it.
 And that is why it is such a fun idea.
 
-Also, rather than "just" providing the coorinates of "set" (dark) pixels, the correct coordinates to color in, could be the answers to questions in a quiz.
+Also, rather than "just" providing the coordinates of "set" (dark) pixels, the correct coordinates to color in, could be the answers to questions in a quiz.
 Only if you solve the quiz correctly and color in all the right pixels, will you be able to scan the QR.
 
 I ended up not doing that, but the idea stuck with me.
@@ -22,10 +21,10 @@ So I built a little proof of concept.
 
 ## PoC
 
-With a little bit of html, css and vanilla javascript, I built a table with individual identifieable table cells.
+With a little bit of html, css and vanilla javascript, I built a table with individual identifiable table cells.
 A javascript function would toggle a css class for the respective cell, to set it to `dark`.
 I added a coordinate x & y input with a button and could set the pixels like this.
-From that I implemnted placeholder questions, wher answers each had a pixel coordinate assigned.
+From that I implemented placeholder questions, where answers each had a pixel coordinate assigned.
 When the checkbox of the answer was selected, the toggle function was called with those coordinates and set the corresponding pixel.
 
 ![poc2](./poc2.png)
@@ -45,35 +44,35 @@ Code away!
    Some of these pixels I want to omit from the initial QR code and assign them to correct answers.
    I found [skip2/go-qrcode](https://pkg.go.dev/github.com/skip2/go-qrcode).
    It allows me to generate a QR code Bitmap.
-   A two-dimensional silce of bools (`[][]bool`).
+   A two-dimensional slice of bools (`[][]bool`).
    Perfect!
 1. I need a frontend.
-   I do not want to overcomplicate it.
+   I do not want to over-complicate it.
    I work with data in the go backend.
    Hmm.
    Why not just go for go templating?
    Yes!
    Let's do that.
    For client-side interactivity, I shall just stick to vanilla javascript.
-   Not a fun way to work, but for what little interactivity I need definitly simpler, than working with any of the larger frameworks.
+   Not a fun way to work, but for what little interactivity I need definitely simpler, than working with any of the larger frameworks.
    
 What do we need?
 
 1. a form where users can create new quizzes
     1. Title
     1. Solution (e.g. a link) to be encoded in the QR code
-    1. *n* Questions with *m* answers each. Originally thought to be single-choice, evenetually turned out be more fun as multiple choice.
+    1. *n* Questions with *m* answers each. Originally thought to be single-choice, eventually turned out be more fun as multiple choice.
 1. a form submission, that automatically turns the form data into qr quiz
     1. Create QR from secret
     1. Steal a *set* pixel for each correct answer and assign it to the answer
-    1. Assign an *unset* picel to each incorrect answer
+    1. Assign an *unset* pixel to each incorrect answer
 1. a quiz template with an incomplete QR code and the quiz Q&A
     1. correct answers recreate the QR by re-inserting missing pixels
     1. wrong answers insert pixels, that were meant to remain unset
 
 ## Implementation
 
-I startet by creating am http server with html templates.
+I started by creating am http server with html templates.
 Css and JS files included as static assets.
 This part was fairly straight forward.
 
@@ -111,11 +110,11 @@ Using the afore mentioned go library we can generate this bitmap using the `low`
 
 The quiet zone is a frame around the code itself, specified in the QR spec.
 Depending on the version of the QR code, it may not always be the same.
-It is always meant to not contain any visual noise, to allow for better optical recocnition while scanning.
+It is always meant to not contain any visual noise, to allow for better optical recognition while scanning.
 
-Even if we don't know the spec, we intrinsicly recognize, that there probably should not be any pixels in that frame.
+Even if we don't know the spec, we intrinsically recognize, that there probably should not be any pixels in that frame.
 Thus, it makes no sense to include it in the set of pixels we want to work with.
-As there are exlusively unset, white pixels in the quiet zone, picking them for wrong answers would make them stand out as obvious wrong answers.
+As there are exclusively unset, white pixels in the quiet zone, picking them for wrong answers would make them stand out as obvious wrong answers.
 
 ![quietzone](./quietzone.png)
 
@@ -140,9 +139,9 @@ This is kind of messing with my concept.
 I don't mind having a bit of a error tolerance in the quiz, but 7% of wrongly answered questions seemed too high.
 The simple solution I came up with:
 Just assign multiple pixels per answer instead of just one.
-In fact, now I assign almost every pixel, which is actuall quite noticable in the amount of rows stored in the database per quiz.
+In fact, now I assign almost every pixel, which is actually quite noticeable in the amount of rows stored in the database per quiz.
 
-### Assinging Pixels
+### Assigning Pixels
 
 After eligible Pixels are chosen, they are assigned to answers.
 In theory, I determine the amount of pixels per question like so:
@@ -153,16 +152,16 @@ min((unsetPixelCount/wrongAnswerCount),(setPixelCount/correctAnswerCount))
 
 However, there were some extra guardrails I had to install, as providing no correct (or wrong) answers would result in a division by 0 error.
 
-Also, it is theroetically feasible to provide more answers in a quiz, than there are pixels in a QR code.
+Also, it is theoretically feasible to provide more answers in a quiz, than there are pixels in a QR code.
 Should this happen, the request will be rejected with an http `400 Bad Request`.
 
 ### Storing the quiz
 
 The initial implementation was saving quizzes in memory.
-Soon after I added sqlite into my persitance layer.
+Soon after I added sqlite into my persistence layer.
 
 1 `quiz` has n `question`s and a `question` has n answers.
-These are all fairly simple foreign key realtions.
+These are all fairly simple foreign key relations.
 However, the amount of joins to fetch a single quiz is quite high and I am not too fond of that.
 From the small number of quizzes my test users have generated I compute an average of 44 pixels per answers with the highest count being 206 pixels per answer (small quiz with only two answers).
 
@@ -184,10 +183,34 @@ I needed to implement the `valuer` and `scanner` interface for the `Bitmap` type
 And I did not want to waste time on thinking about a cool and efficient marshalling scheme.
 So what did I do?
 JSON.
-Yep, I am serialzing a twodimensional array of bools into json.
+Yep, I am serializing a two dimensional array of bools into json.
 This is stupid.
 I know.
 Every `0` or `1` boolean is now a string of `true` or `false` in my database.
 In a comma delimited list of lists.
 I know.
-But it was fast to get started and is now one of my top priorites to get fixed.
+But it was fast to get started and is now one of my top priorities to get fixed.
+
+## Final Result
+
+I am quite happy with the final result.
+There are still a couple of things to improve but the current application is surprisingly close to what I had in mind initially.
+There is a landing page, a (maybe too) simple form to create quizzes and upon form submission, you receive a link to your quiz.
+Here are some impressions:
+
+![quiz](./quiz.png)
+
+*This is what a quiz looks like*
+
+![home](./home.png)
+
+*The landing page is quite simple*
+
+![form1](./form1.png)
+
+*This is how you create a new quiz*
+
+![form2](./form2.png)
+
+*And how you add questions with answers to it*
+
