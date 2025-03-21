@@ -6,31 +6,35 @@ tags = ['golang', 'qr code', 'quiz', 'sqlite', 'gin']
 
 Recently I had a stupid idea for an event: send out invitations with a QR Code to color in yourself.
 Invitees would receive an empty square grid and a number of coordinates.
-Only when they color in the QR code correctly, will they able to scan the invitation and sign up for the event.
+Only when they color in the QR code correctly, will they be able to scan the invitation and sign up for the event.
 Puzzlers would love this.
 Everyone else would hate it.
-And that is why it is such a fun idea.
+The latter is why I found this such a funny idea.
 
-Also, rather than "just" providing the coordinates of "set" (dark) pixels, the correct coordinates to color in, could be the answers to questions in a quiz.
-Only if you solve the quiz correctly and color in all the right pixels, will you be able to scan the QR.
+Also, rather than "just" providing the coordinates of "set" (dark) pixels (the correct coordinates to color in), I thought, I could hide them in a quiz. Every answer has a coordinate. Right answers give correct coordinates, wrong answers incorrect ones.
+Only if you solve the quiz correctly and color in all the right, "missing" pixels, will you be able to scan the QR.
 
 I ended up not doing that, but the idea stuck with me.
-It's just my kind of humor to annoy people like this.
-After a couple of days, I started thinking that this would maybe be funny to other people as well.
+Maybe I am just annoying like that.
+But maybe I am not the only one.
+I started thinking that this would maybe be funny to other people as well.
 So I built a little proof of concept.
 
 ## PoC
 
-With a little bit of html, css and vanilla javascript, I built a table with individual identifiable table cells.
+With a little bit of html, css and vanilla javascript, I built a table with fixed size cells.
+Each with an `id` corresponding to it's `x,y` coordinates.
 A javascript function would toggle a css class for the respective cell, to set it to `dark`.
-I added a coordinate x & y input with a button and could set the pixels like this.
+I added a text input for coordinate and a submit button and could set and unset (toggle) given pixels like this.
 From that I implemented placeholder questions, where answers each had a pixel coordinate assigned.
-When the checkbox of the answer was selected, the toggle function was called with those coordinates and set the corresponding pixel.
+When their checkbox was was clicked (checked/unchecked), the toggle function was called with those coordinates and set the corresponding pixel.
+
+This is what that looked like:
 
 ![poc2](./poc2.png)
 ![poc3](./poc3.png)
 
-## Concept takes shape
+## The concept takes shape
 
 OK cool.
 The idea should work.
@@ -38,6 +42,7 @@ At least after the PoC, I am fairly confident it will.
 What now?
 Code away!
 
+1. I need a sever, that can handle submission of new quizzes, generate a "qr puzzle" and let users solve the puzzle by solving the quiz.
 1. I like go. I will write it in go.
 1. I need a way to generate QR codes in a data format that I can work with.
    Meaning, I need to be able to generate QR codes and then manipulate them in a way, where I can get the coordinates of individual pixels.
@@ -49,7 +54,7 @@ Code away!
 1. I need a frontend.
    I do not want to over-complicate it.
    I work with data in the go backend.
-   Hmm.
+   Hmm...
    Why not just go for go templating?
    Yes!
    Let's do that.
@@ -102,11 +107,10 @@ Quiz data from the form looks like this when it is submitted.
 }
 ```
 
-They are assigned and id (cuid2) and the secret is encoded into a QR code bitmap.
-Using the afore mentioned go library we can generate this bitmap using the `low` recovery level (see section fault tolerance) and omitting the quiet zone.
+They are assigned and id ([cuid2](https://pkg.go.dev/github.com/nrednav/cuid2)) and the secret is encoded into a QR code bitmap.
+Using the aforementioned go library we can generate this bitmap using the `low` recovery level (see section fault tolerance) and omitting the quiet zone.
 
-
-### Quiet Zone and Position Markers
+### Choosing eligible Pixels: Of the Quiet Zone and Position Markers
 
 The quiet zone is a frame around the code itself, specified in the QR spec.
 Depending on the version of the QR code, it may not always be the same.
@@ -118,27 +122,30 @@ As there are exclusively unset, white pixels in the quiet zone, picking them for
 
 ![quietzone](./quietzone.png)
 
-The characteristic three squares in three of the corners mark the orientation of the QR and are known as "Position".
-For them the same holds true.
-Placing an incorrect pixel in that area would immediately stand out.
+The characteristic three squares in three of the corners mark the orientation of the QR and are known as "positions".
+For them the same holds true:
+placing an incorrect pixel in that area would immediately stand out.
 
 Thus I came up with a function to choose eligible pixels only.
-Answers would only be assigned Pixels from this area.
-Find the details in the [implementation](https://github.com/sekthor/qrquiz/blob/main/internal/domain/puzzle.go#L46).
+It excludes the quiet zone, the position markers and a 1-module (pixel) wide border around each position.
+Answers would only be assigned Pixels from this "eligible" area.
+For more details, check out the [implementation](https://github.com/sekthor/qrquiz/blob/main/internal/domain/puzzle.go#L46).
 
 ![eligible-pixels](./eligible.png)
 
-
 ### The Problem: Fault tolerance of QR Codes
 
-Now as it turns out, QR Codes have fault tolerance built-in ("recovery level").
+Now as it turns out, QR Codes have fault tolerance built-in *("recovery level")*.
 This is so you can loose part of the QR code (print error, stains, or ripped corner), and still scan it.
 Even at the lowest recovery setting, you can still loose up to 7% percent of a QR code.
 
+Side note: That is why you can put your logo in the middle of a QR code and still have it scan correctly.
+Provided of course, you do not cover more pixels, than the recovery level of the QR allows you to "loose".
+
 This is kind of messing with my concept.
-I don't mind having a bit of a error tolerance in the quiz, but 7% of wrongly answered questions seemed too high.
+I don't mind having a bit of a error tolerance in the quiz, but 7% of incorrectly answered questions seemed too high.
 The simple solution I came up with:
-Just assign multiple pixels per answer instead of just one.
+Assign multiple pixels per answer instead of just one.
 In fact, now I assign almost every pixel, which is actually quite noticeable in the amount of rows stored in the database per quiz.
 
 ### Assigning Pixels
@@ -214,3 +221,6 @@ Here are some impressions:
 
 *And how you add questions with answers to it*
 
+## Playing the game
+
+If you would like to test the app, at the time of writing there is a demo running [here](https://qrquiz.sekthor.ch).
