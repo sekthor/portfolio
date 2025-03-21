@@ -1,4 +1,24 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+
+<style>
+html, body {
+  height: 100%;
+}
+main {
+  height: calc(100% - 3rem);
+}
+</style>
+
+<div style="display: flex; justify-content: center; gap: 2rem;  height: 100%; padding-top: 8rem;  flex-wrap: wrap;">
+{{ $title := .Site.Title }}
+{{ with .Site.Params.Home.Profile }}
+<img src="{{ . }}" alt="{{ $title }}" class="profile">
+{{ end }}
+<div style="min-width: 300px; padding: 0 1rem;">
+  <h1 style="margin-top: 0;">{{ if .Page.Title }}{{ .Page.Title }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
   {{ .Content }}
+  {{ partial "socials.html" (dict "socials" .Site.Params.Socials) }}
+</div>
+</div>
+
 {{ end }}

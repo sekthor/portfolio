@@ -4,6 +4,17 @@ title: 'sekthor'
 
 theme: minimal
 
+params:
+  home:
+    profile: "/profile.png"
+  socials:
+    - name: github
+      link: https://github.com/sekthor
+      icon: /icons/github.png
+    - name: e-mail
+      link: mailto:me@sekthor.dev 
+      icon: /icons/mail.png
+
 menus:
   main:
     - name: Articles
