@@ -1,5 +1,14 @@
 {{ define "main" }}
-  <article>
+<article>
+  <div style="display: flex; justify-content: space-between;">
+  {{ $pages := .CurrentSection.Pages.ByWeight }}
+  {{ with $pages.Prev . }}
+    <a href="{{ .RelPermalink }}">< Previous</a>
+  {{ end }}
+  {{ with $pages.Next . }}
+    <a href="{{ .RelPermalink }}">Next ></a>
+  {{ end }}
+  </div>
   <h1>{{ .Title }}</h1>
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
@@ -8,5 +17,5 @@
 
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-  </article>
+</article>
 {{ end }}

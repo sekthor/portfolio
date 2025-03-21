@@ -37,8 +37,6 @@ nav li {
 }
 
 main {
-  max-width: 800px;
-  margin: auto;
   line-height: 1.6;
 }
 
@@ -57,6 +55,8 @@ a:hover {
 }
 
 article {
+  max-width: 800px;
+  margin: auto;
   padding: 1rem 0;
 }
 
@@ -76,8 +76,14 @@ h1,h2,h3 {
   font-weight: 400;
 }
 
-.highlight, article img {
+.highlight {
   margin: 2rem 0;
+  max-width: 100%;
+}
+
+img {
+  margin: 2rem auto;
+  display: block;
   max-width: 100%;
 }
 
@@ -118,4 +124,17 @@ blockquote p {
 
 .terms {
   margin-top: 2rem;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin: 0;
+  background-color: #ddd;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
 }
