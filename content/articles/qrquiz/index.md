@@ -223,4 +223,4 @@ Here are some impressions:
 
 ## Playing the game
 
-If you would like to test the app, at the time of writing there is a demo running [here](https://qrquiz.sekthor.ch).
+If you would like to test the app, at the time of writing there is a demo running [here](https://qrquiz.sekthor.dev).
