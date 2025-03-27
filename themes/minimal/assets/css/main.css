@@ -6,9 +6,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
 body {
   color: #222;
-  margin: 0;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -57,7 +63,7 @@ a:hover {
 article {
   max-width: 800px;
   margin: auto;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 article time {
@@ -79,6 +85,12 @@ h1,h2,h3 {
 .highlight {
   margin: 2rem 0;
   max-width: 100%;
+  overflow-x: scroll;
+  ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.highlight::-webkit-scrollbar {
+  display: none;
 }
 
 img {
@@ -120,6 +132,14 @@ blockquote p {
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 10rem;
+}
+
+.tags {
+  white-space: wrap;
+}
+.date {
+  font-size: small;
 }
 
 .terms {
