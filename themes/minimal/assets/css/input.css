@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+article h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+article h3 {
+    font-size: 1.25rem;
+}
+article h4 {
+    font-size: 1.225rem;
+}
+article img {
+    display: block;
+    margin: 1rem auto;
+}
+article ul {
+    list-style: disc;
+}
+article ol {
+    list-style: decimal;
+    padding-inline-start: 40px;
+}
+article li {
+    display: list-item;
+}
+a {
+    color: blue;
+}
+a:hover {
+    text-decoration: underline;
+}

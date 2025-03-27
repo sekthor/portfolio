@@ -1,21 +1,12 @@
 {{ define "main" }}
 
-<style>
-html, body {
-  height: 100%;
-}
-main {
-  height: calc(100% - 3rem);
-}
-</style>
-
-<div style="display: flex; justify-content: center; gap: 2rem;  height: 100%; padding-top: 8rem;  flex-wrap: wrap;">
+<div class="flex flex-wrap justify-center items-center gap-4 mt-16">
 {{ $title := .Site.Title }}
 {{ with .Site.Params.Home.Profile }}
-<img src="{{ . }}" alt="{{ $title }}" class="profile">
+<img src="{{ . }}" alt="{{ $title }}" class="aspect-square rounded-full bg-slate-200 w-xs h-xs">
 {{ end }}
-<div style="min-width: 300px; padding: 0 1rem;">
-  <h1 style="margin-top: 0;">{{ if .Page.Title }}{{ .Page.Title }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
+<div class="grid gap-2 max-w-md">
+  <h1 class="text-4xl">{{ if .Page.Title }}{{ .Page.Title }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
   {{ .Content }}
   {{ partial "socials.html" (dict "socials" .Site.Params.Socials) }}
 </div>

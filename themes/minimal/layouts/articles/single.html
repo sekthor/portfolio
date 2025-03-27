@@ -1,6 +1,6 @@
 {{ define "main" }}
-<article>
-  <div style="display: flex; justify-content: space-between;">
+<article class="max-w-3xl m-auto gap-6 grid">
+  <div class="flex justify-between">
   {{ $pages := .CurrentSection.Pages.ByWeight }}
   {{ with $pages.Prev . }}
     <a href="{{ .RelPermalink }}">< Previous</a>
@@ -9,11 +9,11 @@
     <a href="{{ .RelPermalink }}">Next ></a>
   {{ end }}
   </div>
-  <h1>{{ .Title }}</h1>
+  <h1 class="text-3xl mt-4">{{ .Title }}</h1>
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <time datetime="{{ $dateMachine }}" class="text-sm mb-4">{{ $dateHuman }}</time>
 
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}

@@ -1,6 +1,6 @@
 {{ define "main" }}
-<article>
-  <h1>{{ .Title }}</h1>
+<article class="max-w-3xl mx-auto mt-8 grid gap-4" >
+  <h1 class="text-3xl">{{ .Title }}</h1>
   {{ .Content }}
 
   {{ partial "pagelist.html" (dict "pages" .Pages) }}
