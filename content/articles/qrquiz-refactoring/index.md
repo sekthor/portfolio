@@ -4,7 +4,7 @@ date = 2025-03-28T17:10:28+01:00
 tags = ["qrquiz", "refactoring", "sqlite", "golang"]
 +++
 
-My hobby project [qrquiz](https://qrquiz.sekthor.dev) (described in [blog post](./qrquiz)) has had a pretty ugly hack to how I stored initial "broken" QR codes in the database.
+My hobby project [qrquiz](https://qrquiz.sekthor.dev) (described in [blog post](../qrquiz)) has had a pretty ugly hack to how I stored initial "broken" QR codes in the database.
 I used to just store JSON marshaled representations of bitmap ([][]bool) in string format.
 This has been bugging me from the get go ([#11](https://github.com/sekthor/qrquiz/issues/11)).
 I was looking for a less disk space consuming option.
