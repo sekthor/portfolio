@@ -1,10 +1,10 @@
 {{- $pages := .pages }}
-<div>
+<div class="font-mono grid">
     {{ range $pages }}
-    <div class="pagelistitem">
-        <span class="date">{{ time.Format "2 Jan 2006" .Date }} -</span>
-        <a class="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        <span class="tags">
+    <div class="flex gap-2 overflow items-center">
+        <span class="text-nowrap">{{ time.Format "2 Jan 2006" .Date }} -</span>
+        <a href="{{ .RelPermalink }}" class="grow whitespace-nowrap text-ellipsis overflow-hidden my-2">{{ .LinkTitle }}</a>
+        <span class="text-xs italic text-black text-right">
             {{ with .GetTerms "tags" }}
                 ({{ range $k, $v :=  . }}{{- if $k }}, {{ end }}<a href="{{ .RelPermalink }}">{{ .LinkTitle}}</a>{{ end }})
             {{ end }}

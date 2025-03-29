@@ -2,9 +2,11 @@
 {{ $socials := .socials }}
 
 {{ with $socials }}
-<div style="display: flex; flex-wrap: wrap; gap: 1rem">
+<div class="flex flex-wrap gap-4">
 {{ range .}}
-    <a href="{{ .link }}"><img src="{{ .icon }}" alt="{{ .name }}" class="icon"></a>
+    <a href="{{ .link }}">
+        <img src="{{ .icon }}" alt="{{ .name }}" class="w-8 h-8 m-0">
+    </a>
 {{ end }}
 </div>
 {{ end }}
