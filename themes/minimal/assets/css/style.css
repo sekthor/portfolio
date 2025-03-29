@@ -7,11 +7,14 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-slate-200: oklch(0.929 0.013 255.508);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-xs: 20rem;
     --container-md: 28rem;
     --container-3xl: 48rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-3xl: 1.875rem;
@@ -180,6 +183,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -189,8 +195,8 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mb-4 {
-    margin-bottom: calc(var(--spacing) * 4);
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
   }
   .block {
     display: block;
@@ -219,6 +225,9 @@
   .max-w-md {
     max-width: var(--container-md);
   }
+  .grow {
+    flex-grow: 1;
+  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -237,8 +246,8 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
+  .overflow-hidden {
+    overflow: hidden;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -255,6 +264,9 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
+  .text-right {
+    text-align: right;
+  }
   .font-mono {
     font-family: var(--font-mono);
   }
@@ -270,6 +282,25 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-nowrap {
+    text-wrap: nowrap;
+  }
+  .text-ellipsis {
+    text-overflow: ellipsis;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .italic {
+    font-style: italic;
+  }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -281,8 +312,19 @@ html, body {
   width: 100%;
   overflow-x: hidden !important;
 }
+article {
+  margin-top: 2rem;
+}
+article h2, article h3, article h4 {
+  margin-top: 3rem;
+}
+article p {
+  margin: 1rem 0;
+}
+article h1 {
+  font-size: 2rem;
+}
 article h2 {
-  margin-top: 1rem;
   font-size: 1.5rem;
 }
 article h3 {
@@ -300,6 +342,8 @@ article ul {
 }
 article ol {
   list-style: decimal;
+}
+article ul, ol {
   padding-inline-start: 40px;
 }
 article li {
@@ -310,6 +354,9 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+.highlight {
+  font-size: small;
 }
 @property --tw-shadow {
   syntax: "*";

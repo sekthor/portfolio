@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="max-w-3xl m-auto gap-6 grid">
+<article class="max-w-3xl m-auto">
   <div class="flex justify-between">
   {{ $pages := .CurrentSection.Pages.ByWeight }}
   {{ with $pages.Prev . }}
@@ -13,7 +13,7 @@
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}" class="text-sm mb-4">{{ $dateHuman }}</time>
+  <time datetime="{{ $dateMachine }}" class="text-sm mb-8">{{ $dateHuman }}</time>
 
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
