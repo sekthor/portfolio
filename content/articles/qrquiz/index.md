@@ -1,7 +1,8 @@
 +++
 title = 'QrQuiz: A silly App'
 date = 2025-03-19T14:35:25+01:00
-tags = ['golang', 'qr code', 'quiz', 'sqlite', 'gin']
+tags = ['golang', 'qr code', 'quiz', 'sqlite', 'gin', 'silly app']
+technologies = ["golang", "sqlite", "gorm", "javascript", "gin"]
 +++
 
 Recently I had a stupid idea for an event: send out invitations with a QR Code to color in yourself.

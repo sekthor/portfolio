@@ -1,7 +1,8 @@
 +++
 title = 'Qrquiz Refactoring'
 date = 2025-03-28T17:10:28+01:00
-tags = ["qrquiz", "refactoring", "sqlite", "golang"]
+tags = ["qrquiz", "refactoring", "sqlite", "golang", "silly app"]
+technologies = ["golang", "sqlite", "javascript", "gorm", "gin"]
 +++
 
 My hobby project [qrquiz](https://qrquiz.sekthor.dev) (described in [blog post](../qrquiz)) has had a pretty ugly hack to how I stored initial "broken" QR codes in the database.

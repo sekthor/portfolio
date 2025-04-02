@@ -17,7 +17,7 @@ params:
 
 menus:
   main:
-    - name: Articles
+    - name: Blog
       pageRef: '/articles'
       weight: 10
     - name: Tags
@@ -29,6 +29,7 @@ menus:
 
 taxonomies:
   tag: tags
+  technology: technologies
 
 markup:
   highlight:
