@@ -12,11 +12,11 @@ article {
 }
 
 article h2, article h3, article h4 {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
-article p {
-    margin: 1rem 0;
+article > p {
+    margin: 1.5rem 0;
 }
 
 article h1 {
@@ -36,6 +36,14 @@ article h4 {
 article img {
     display: block;
     margin: 1rem auto;
+}
+article blockquote {
+    background-color: var(--color-slate-200);
+    color: var(--color-slate-600);
+    padding: 0.5rem 1rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    font-style: italic;
 }
 article ul {
     list-style: disc;
