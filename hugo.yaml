@@ -33,7 +33,7 @@ taxonomies:
 
 markup:
   highlight:
-    style: github
+    style: monokai
     lineNos: true
 
 caches:
