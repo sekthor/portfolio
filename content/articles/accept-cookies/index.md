@@ -35,7 +35,7 @@ I propose that companies tracking user to a point they find out intimate details
 Just in time for April Fools, I have started implementing a proof of concept app.
 The idea is, that upon accepting the cookie policy, the app will use a number of filthy tricks to attempt to obtain the users address.
 
-So far I "supports"
+So far it "supports"
 
 - given name & family name form that includes hidden fields for addresses.
     - this is required to fill out to accept cookies
