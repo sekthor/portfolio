@@ -5,8 +5,8 @@
 {{ with .Site.Params.Home.Profile }}
 <img src="{{ . }}" alt="{{ $title }}" class="aspect-square rounded-full bg-slate-200 w-xs h-xs">
 {{ end }}
-<div class="grid gap-2 max-w-md">
-  <h1 class="text-4xl">{{ if .Page.Title }}{{ .Page.Title }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
+<div class="grid gap-6 max-w-md">
+  <h1>{{ if .Page.Title }}{{ .Page.Title }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
   {{ .Content }}
   {{ partial "socials.html" (dict "socials" .Site.Params.Socials) }}
 </div>

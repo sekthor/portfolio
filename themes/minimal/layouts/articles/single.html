@@ -1,21 +1,26 @@
 {{ define "main" }}
 <article class="max-w-3xl m-auto">
-  <div class="flex justify-between">
-  {{ $pages := .CurrentSection.Pages.ByWeight }}
-  {{ with $pages.Prev . }}
-    <a href="{{ .RelPermalink }}">< Previous</a>
-  {{ end }}
-  {{ with $pages.Next . }}
-    <a href="{{ .RelPermalink }}">Next ></a>
-  {{ end }}
+  <div class="my-0!">
+    <h1>{{ .Title }}</h1>
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <time datetime="{{ $dateMachine }}" class="text-sm">{{ $dateHuman }}</time>
   </div>
-  <h1 class="text-3xl mt-4">{{ .Title }}</h1>
-
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}" class="text-sm mb-8">{{ $dateHuman }}</time>
 
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  <div class="flex justify-between text-sm">
+    {{ $pages := .CurrentSection.Pages.ByWeight }}
+    <span>
+    {{ with $pages.Prev . }}
+      <a href="{{ .RelPermalink }}">< Previous</a>
+    {{ end }}
+    </span>
+    <span>
+    {{ with $pages.Next . }}
+      <a href="{{ .RelPermalink }}">Next ></a>
+    {{ end }}
+    </span>
+  </div>
 </article>
 {{ end }}

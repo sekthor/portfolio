@@ -1,0 +1,8 @@
+{{ define "main" }}
+<article class="max-w-3xl m-auto">
+  <h1>Technology: '{{ .Title }}'</h1>
+  {{ .Content }}
+
+  {{ partial "pagelist.html" (dict "pages" .Pages) }}
+</article>
+{{ end }}

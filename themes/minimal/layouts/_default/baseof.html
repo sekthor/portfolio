@@ -4,10 +4,10 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <header class="p-4 flex sticky top-0 justify-between bg-white shadow-md">
+  <header class="sticky top-0 bg-transparent">
     {{ partial "header.html" . }}
   </header>
-  <main class="p-2">
+  <main class="p-4">
     {{ block "main" . }}{{ end }}
   </main>
   <!--<footer>

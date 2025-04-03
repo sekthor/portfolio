@@ -3,7 +3,7 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  <ul>
+  <ul class="columns-2">
   {{ range .Pages }}
     <li><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
   {{ end }}

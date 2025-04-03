@@ -1,2 +1,4 @@
-<span><a href="/">{{ site.Title }}</a></span>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<div class="flex flex-wrap justify-between p-4 border-b-1 border-slate-200 backdrop-blur-md bg-white/[.75]">
+    <span><a href="/" class="text-slate-900!">{{ site.Title }}</a></span>
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</div>

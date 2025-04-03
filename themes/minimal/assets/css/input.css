@@ -3,42 +3,42 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  overflow-x: hidden !important;
 }
 
 article {
-    margin-top: 2rem;
+    @apply leading-7;
 }
 
-article h2, article h3, article h4 {
-    margin-top: 4rem;
+article h1, article h2, article h3, article h4 {
+    @apply mt-10;
 }
 
-article > p {
-    margin: 1.5rem 0;
+article > * {
+    @apply my-6 max-w-full overflow-x-auto;
 }
 
-article h1 {
-    font-size: 2rem;
+h1 {
+    @apply text-3xl font-medium;
 }
 
-article h2 {
-    font-size: 1.5rem;
+h2 {
+    @apply text-2xl font-medium;
 }
 
-article h3 {
-    font-size: 1.25rem;
+h3 {
+    @apply text-xl font-medium;
 }
-article h4 {
-    font-size: 1.225rem;
+
+h4 {
+    @apply text-lg font-medium;
 }
+
 article img {
     display: block;
     margin: 1rem auto;
 }
 article blockquote {
-    background-color: var(--color-slate-200);
+    background-color: var(--color-slate-100);
     color: var(--color-slate-600);
     padding: 0.5rem 1rem;
     margin: 2rem 0;
@@ -52,14 +52,14 @@ article ol {
     list-style: decimal;
 }
 article ul, ol {
-    margin: 1.5rem 0;
+    @apply my-6;
     padding-inline-start: 40px;
 }
 article li {
     display: list-item;
 }
 a {
-    color: blue;
+    color: var(--color-cyan-600)
 }
 a:hover {
     text-decoration: underline;
@@ -73,7 +73,13 @@ pre {
     @apply rounded-md;
 }
 
-.highlight {
-    margin: 1.5rem 0;
+table {
+    @apply my-6 border-collapse text-sm;
+}
+td, th {
+    @apply px-2 py-2 border border-slate-200;
 }
 
+th {
+    @apply bg-slate-100;
+}
