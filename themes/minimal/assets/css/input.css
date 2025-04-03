@@ -52,6 +52,7 @@ article ol {
     list-style: decimal;
 }
 article ul, ol {
+    margin: 1.5rem 0;
     padding-inline-start: 40px;
 }
 article li {
@@ -63,6 +64,16 @@ a {
 a:hover {
     text-decoration: underline;
 }
-.highlight {
+pre {
     font-size: small;
+    padding: 0.5rem;
 }
+
+.highlight > div, pre {
+    @apply rounded-md;
+}
+
+.highlight {
+    margin: 1.5rem 0;
+}
+
