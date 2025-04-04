@@ -14,6 +14,9 @@ params:
     - name: e-mail
       link: mailto:me@sekthor.dev 
       icon: /icons/mail.png
+    - name: gpg
+      link: /sekthor.gpg.asc
+      icon: /icons/key.png
 
 menus:
   main:
