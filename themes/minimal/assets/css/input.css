@@ -83,3 +83,7 @@ td, th {
 th {
     @apply bg-slate-100;
 }
+
+code:not(.highlight code) {
+    @apply bg-slate-200 py-[0.1rem] px-2 rounded-md text-sm;
+}
