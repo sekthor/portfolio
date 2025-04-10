@@ -1,7 +1,7 @@
 +++
 title = 'GPG for everything'
 date = 2025-04-05T23:11:48+02:00
-tags = ["gpg", "pki"]
+tags = ["gpg", "pki", "cryptography"]
 technologies = ["gpg"]
 +++
 

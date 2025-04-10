@@ -1,7 +1,7 @@
 +++
 title = 'GPG Cheatsheet'
 date = 2025-04-02T20:00:00+02:00
-tags = ["gpg"]
+tags = ["gpg", "cryptography"]
 technologies = ["gpg"]
 +++
 
