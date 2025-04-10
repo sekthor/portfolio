@@ -1,9 +1,10 @@
 {{- $pages := .pages }}
-<div class="font-mono grid">
+<div class="font-mono grid gap-2">
     {{ range $pages }}
-    <div class="flex gap-2 overflow items-center text-sm">
+    <div class="flex gap-2 items-center text-sm">
         <span class="text-nowrap">{{ time.Format "02 Jan 2006" .Date }} -</span>
         <a href="{{ .RelPermalink }}" class="grow whitespace-nowrap text-ellipsis overflow-hidden my-2">{{ .LinkTitle }}</a>
+        
         <span class="text-xs italic text-black text-right">
             {{ with .GetTerms "tags" }}
                 ({{ range $k, $v :=  . }}{{- if $k }}, {{ end }}<a href="{{ .RelPermalink }}">{{ .LinkTitle}}</a>{{ end }})
