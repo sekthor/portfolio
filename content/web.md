@@ -1,7 +1,6 @@
 +++
 title = 'Web'
 date = 2025-04-04T14:28:03+02:00
-draft = true
 +++
 
 This is a curated list of cool ressources on the web, that I recommend.
