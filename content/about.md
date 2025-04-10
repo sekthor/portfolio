@@ -11,6 +11,7 @@ On this website you can find:
 
 - my personal [blog](/articles) where I mostly post about technology
 - my [contact](/contact) information
+- a curated collection of [web](/web) ressources.
 
 ## Interests
 
