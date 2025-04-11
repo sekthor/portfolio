@@ -3,10 +3,10 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  <div class="flex flex-wrap gap-2"> 
+  <div class="flex flex-wrap gap-4"> 
   {{ range .Pages }}
-    <a href="{{ .RelPermalink}}" class="border border-slate-200 rounded-md w-36 text-center hover:shadow">
-      <img src="/icons/{{ lower .Title }}.png" class="inline-block max-h-8">
+    <a href="{{ .RelPermalink}}" class=" grid border border-slate-200 rounded-md w-24 h-24 text-center text-sm hover:shadow">
+      <img src="/icons/{{ lower .Title }}.svg" class="inline-block max-h-8 max-w-20">
       {{ .Title }}
     </a>
   {{ end }}
