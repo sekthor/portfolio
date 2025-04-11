@@ -10,13 +10,13 @@ params:
   socials:
     - name: github
       link: https://github.com/sekthor
-      icon: /icons/github.png
+      icon: /icons/github.svg
     - name: e-mail
       link: mailto:me@sekthor.dev 
-      icon: /icons/mail.png
+      icon: /icons/mail.svg
     - name: gpg
       link: /sekthor.gpg.asc
-      icon: /icons/key.png
+      icon: /icons/key.svg
 
 menus:
   main:
