@@ -3,7 +3,6 @@ title = 'Dice Making: First Batch'
 date = 2025-05-05T12:07:38+02:00
 tags = ["dice", "diy"]
 technologies = []
-draft = true
 +++
 
 As a fan of both pen-and-paper games and DIY, I recently decided to try manufacturing my own dice.  
