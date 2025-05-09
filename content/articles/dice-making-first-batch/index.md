@@ -6,104 +6,94 @@ technologies = []
 draft = true
 +++
 
-As a fan of both Pen-and-Paper Games and DIY I have recently decided to try an manufacture my own dice.
-I must admit I can be a bit of a [buyhard](https://www.urbandictionary.com/define.php?term=BuyHard) sometimes.
-After little more than a year of discovering this hobby, I have already accumulated a hand full of dice sets.
-I know that dice hoarding is a common illness among players (*"dice goblins"*), but I won't allow this to get out of hand.
-Well, at least not with purchasing dice.
-The guy equivalent to girl-math is that something is free if you make it yourself, even if the materials and time you needed to make the thing cost you *n*-fold the retail price.
+As a fan of both pen-and-paper games and DIY, I recently decided to try manufacturing my own dice.  
+I must admit, I can be a bit of a [buyhard](https://www.urbandictionary.com/define.php?term=BuyHard) sometimes.  
+After just over a year of discovering this hobby, I’ve already accumulated a handful of dice sets.  
+I know that dice hoarding is a common illness among players (*"dice goblins"*), but I won’t let it get out of hand—at least not by purchasing more dice.  
+The guy equivalent of girl math is thinking something is free if you make it yourself, even if the materials and time cost you *n*-fold the retail price.
 
 ![First dice from the good side](good-side.webp)
 
-Without building it up too much, this is what the final dice turned out like.
-I was not expecting the first ever batch to be perfect and they are far from that.
-There are a lot of blemishes and there are certain faces that are so covered in bubbles that one can barely make out the number.
-But overall I am quite happy with it.
-The first pour was a learning experience just to get a feel for how mold and material behave and to gather ideas on how to optimize the process
+Without building it up too much, this is what the final dice turned out like.  
+I wasn’t expecting the first batch to be perfect—and they’re far from it.  
+There are a lot of blemishes, and some faces are so covered in bubbles that you can barely make out the numbers.  
+But overall, I’m quite happy with the result.  
+The first pour was a learning experience—just to get a feel for how the mold and materials behave and to gather ideas for optimizing the process.
 
 ## Making the Dice
 
-I bought a cheap silicon mold on the internet.
-When It arrived, I was pleasantly surprised, as the quality was better than what I was expecting from a product that I paid next to no money for.
+I bought a cheap silicone mold online.  
+When it arrived, I was pleasantly surprised—the quality was better than I expected for something I paid almost nothing for.
 
 ![mold](mold.webp)
 
-I bought a mold that has 9 dice shapes.
-Those consist of the regular 7 polyhedral dice needed in most TTRPG games as well as two additional d4 shapes.
+The mold includes 9 dice shapes: the standard 7 polyhedral dice used in most TTRPGs, plus two additional d4s.
 
 ### Resin Casting
 
 ![resin](resin.webp)
 
-I got myself some epoxy resin from the hardware store, along with red epoxy dye.
-Pictured are left to right, the resin, the hardener and the red dye.
+I picked up some epoxy resin at the hardware store, along with red epoxy dye.  
+Pictured left to right: the resin, the hardener, and the red dye.
 
-I did not want to think about the first pour too hard and just go for it.
-A project like this I am expecting to go wrong on the first couple of attempts and then learning from that mistakes.
-So I was not concerned about getting the first attempt as perfect as I could but fully embracing that it was going to go bad somewhere.
-So I leapt in head first to see, what my first mistake would be.
+I didn’t want to overthink the first pour—I just wanted to go for it.  
+With a project like this, I expect the first few attempts to go wrong and to learn from my mistakes.  
+So I wasn’t aiming for perfection—I was embracing the likelihood of failure to see what my first mistake would be.
 
 ![first pour](first-pour.webp)
 
-So I mixed the resin, hardener and dye according to the instructions and started pouring.
-Once filled, the whole attempt made quite a decent first impression.
-I did notice some minor air bubbles (also visible in picture), but that not concerned about it on the first pour.
+I mixed the resin, hardener, and dye according to the instructions and started pouring.  
+Once filled, the attempt made a decent first impression.  
+I did notice some minor air bubbles (also visible in the picture), but I wasn’t too concerned about them on the first try.
 
-When I put the lid on, I realized, that this was probably the most difficult step to master.
-Meaning, that I would have to figure out a way to put it on, without creating air pockets on the top face.
-Well this is exactly what happened.
-I removed the lid, after seeing some quite noticeable bubbles.
-I filled some extra material back into the dice, to compensate for the little amount that spilled over each hole and carefully put the lid back on.
+When I put the lid on, I realized that this was probably the trickiest step:  
+figuring out how to place it without creating air pockets on the top faces.  
+Well, that’s exactly what happened.  
+I removed the lid after seeing some noticeable bubbles, added some extra material to compensate for the spillover, and carefully put the lid back on.
 
-Now I had a lot more excess material, that was pushed out of the mold and in between mold and lid.
-I pressed the lid harder onto the mold in an attempt to push the excess epoxy out.
-But there was still a visible layer between.
+Now I had even more excess material being pushed between the mold and the lid.  
+I pressed the lid down harder to try and squeeze out the extra epoxy, but there was still a visible layer in between.
 
-Now the most difficult part:
-Patiently waiting for 48 to 72 hours, without touching mold or in any way interfering with the hardening process.
-Obviously I failed that.
-I touched the mould every couple of hours.
-Lifted it, turned it, tried to see what was happening inside.
+Now for the hardest part:  
+patiently waiting 48 to 72 hours without touching the mold or interfering with the curing process.  
+Obviously, I failed.  
+I touched the mold every few hours—lifted it, turned it, tried to see what was going on inside.
 
 ### Demolding the Dice
 
 ![unpainted](unpainted.webp)
 
-After (almost) 48h I could not wait anymore and checked on my dice.
-And well, they were far from perfect.
-But that was expected.
-The top sides is where are the bubbles have risen to.
-But surprisingly, the lower sides were almost perfect.
+After (almost) 48 hours, I couldn’t wait any longer and checked on the dice.  
+They were far from perfect—but that was expected.  
+The bubbles had risen to the top sides, but surprisingly, the lower sides were almost perfect.
 
 ![Bubbles in flawed dice](bad-side.webp)
 
-The mold has a lid, that is supposed to fit snug on top of it.
-Yet it only will, if there is no "spillage" from the mold itself.
-As I poured the resin slightly above edge to make sure there isn't too little resin in each die cast, there was some spillover.
-It hardened to a layer of about 0.1 - 0.3mm.
-While not significant, technically, this raises the top sides, making that face slightly smaller and the die unfair.
-I don't think this small of a difference has a meaningful impact on the entropy of the dice, but I want to try to reduce it on subsequent castings.
+The mold has a lid that’s supposed to fit snugly on top, but only if there’s no spillover.  
+Since I poured the resin slightly above the edge to avoid underfilling, there was a small amount of overflow.  
+It cured to a thin layer about 0.1–0.3mm thick.  
+While technically minor, this raises the top face slightly, making that face smaller—and the die unfair.  
+I don’t think this tiny difference affects the dice’s entropy in a meaningful way, but I’ll try to reduce it in future casts.
 
-### Painting the numbers
+### Painting the Numbers
 
-I painted the numbers with the finest brush I had (000) and used standard art supply acrylic paint.
-Since it is quite viscous, I mixed it with some water.
-My idea was to get it "runny" enough, that I did not really have to paint the numbers, but can just apply paint into the groves and have the paint distribute itself.
-However when I diluted it enough to do that, there was hardly any paint applied.
-Also the surface tension of the water-paint mixture would often refuse to fill tight corners.
-So I had to put it there with my brush.
+I painted the numbers using the finest brush I had (000) and standard acrylic paint.  
+Since the paint was quite viscous, I mixed it with a bit of water.  
+My idea was to get it runny enough that I wouldn’t have to “paint” the numbers so much as flood the grooves and let the paint settle itself.  
+But when diluted enough to do that, the paint coverage was too weak.  
+Also, the surface tension of the water-paint mix often prevented it from reaching tight corners.  
+So I ended up applying it manually with the brush.
 
-This makes me consider, getting better paint.
-Probably something meant to paint miniatures would do great for this.
+This makes me think that better paint would help—probably something designed for painting miniatures would work great for this.
 
 ## Conclusions
 
-I am quite happy with the result, but there are still a lot of flaws in the dice.
-For the next castings, I will consider:
+I’m quite happy with the result, despite the flaws.  
+For the next batch, I’ll consider:
 
-- Stirring the resin more carefully to minimize bubbles
-- Vibrating the resin to get the bubbles out before pouring
-- Pouring the mold very slowly to prevent new bubbles
-- Filling the mold completely, but with as little excess material as I can
-- Vibrating the mold after pouring
-- Putting the lid onto the mold from the center out to the edges to prevent trapping air.  
+- Stirring the resin more carefully to minimize bubbles  
+- Vibrating the resin before pouring to release trapped air  
+- Pouring slowly to reduce new bubbles  
+- Filling the mold completely, with minimal excess  
+- Vibrating the mold after pouring  
+- Pressing the lid from the center outward to avoid trapping air
