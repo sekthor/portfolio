@@ -6,7 +6,7 @@ theme: minimal
 
 params:
   home:
-    profile: "/profile.png"
+    profile: "/profile.webp"
   socials:
     - name: github
       link: https://github.com/sekthor
