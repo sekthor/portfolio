@@ -51,9 +51,12 @@ article ul {
 article ol {
     list-style: decimal;
 }
-article ul, ol {
-    @apply my-6;
-    padding-inline-start: 40px;
+article ul:not(li ul),
+article ol:not(li ol) {
+  @apply my-6;
+}
+article ul, article ol {
+  padding-inline-start: 40px;
 }
 article li {
     display: list-item;
