@@ -3,6 +3,7 @@ title = 'D&D Resources'
 date = 2025-05-09T13:15:27+02:00
 tags = ["d&d", "ttrpg"]
 technologies = []
+tagline = "Useful online resources for DMs and Players"
 +++
 
 - **Spell Book Cards** are never available to order.
