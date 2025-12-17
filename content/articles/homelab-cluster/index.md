@@ -3,7 +3,7 @@ title = 'Homelab Cluster'
 date = 2025-12-17T10:09:40+01:00
 tags = ["homelab", "virtualization", "proxmox"]
 technologies = ["proxmox", "fortigate"]
-draft = true
+draft = false
 +++
 
 I have recently rebuilt my homelab and am now finally constructing it in a more durable way.
