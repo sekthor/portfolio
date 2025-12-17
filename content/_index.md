@@ -7,5 +7,5 @@ date = 2025-01-27T16:35:55+01:00
 ```bash{lineNos=false}
 $ whoami
 ```
-*I am a DevOps Engineer, Kubernetes Administrator and Gopher.*
-
+*I am a DevOps Engineer, Kubernetes Admin and Gopher.*
+*I build distributed systems. 🛠️*
