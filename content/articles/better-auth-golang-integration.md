@@ -1,8 +1,8 @@
 +++
 title = 'Better Auth Golang Integration'
 date = 2026-03-13T21:33:51+01:00
-tags = []
-technologies = []
+tags = ["golang", "better auth"]
+technologies = ["golang", "better auth"]
 draft = false
 +++
 
